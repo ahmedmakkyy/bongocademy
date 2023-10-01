@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+
 
 const useAllInstructors = () => {
   const{data: allinstructors=[]} = useQuery({

@@ -73,31 +73,31 @@ const Classes = () => {
 
 
   return (
-    <div className="">
+    <div className="container mx-auto">
       <div>
 
-        <h1 className="text-3xl mt-20 font-light text-center mb-8 text-yellow-500 font-serif relative">
-          All Classes
-          <span className="block w-1/3 h-0.5 bg-yellow-500 mx-auto mt-2"></span>
-          <span className="block w-1/3 h-0.5 bg-yellow-500 mx-auto mt-2"></span>
-        </h1>
+        <div>
+          <h1 className="text-3xl mt-16 pt-10 text-center mb-8 text-gray-400 font-bold relative">
+            All Classes
+          </h1>
+        </div>
 
       </div>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap mx-10">
         {classes.map((classes) => (
           <div key={classes._id} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 p-4">
-            <div className="shadow-lg rounded-lg bg-white">
+            <div className="shadow-lg shadow-gray-500 rounded-lg bg-white">
               <img
                 src={classes.image}
                 alt={classes.title}
                 className="w-full h-60 object-cover rounded-t-lg"
               />
               <div className="p-4">
-                <h2 className="text-lg font-bold mb-2">{classes.sport_name}</h2>
-                <p className="text-gray-600 mb-2">Instructor: {classes.instructor_name}</p>
-                <p className="text-gray-600 mb-2">Enrolled: {classes.enrolled}</p>
-                <p className="text-gray-600 mb-4">Available Seats: {classes.available_seats}</p>
-                <p className="text-gray-600">Course Fee: {classes.course_price}</p>
+                <h2 className="text-md font-bold text-emerald-600 mb-1">{classes.sport_name}</h2>
+                <p className="text-gray-600 text-sm font-semibold mb-1">with <span className="text-sky-600 text-sm font-semibold mb-1">{classes.instructor_name}</span></p>
+                <p className="text-gray-600 text-xs mb-1 font-semibold">Enrolled: {classes.enrolled}</p>
+                <p className="text-gray-600 text-xs mb-1 font-semibold">Available Seats: {classes.available_seats}</p>
+                <p className="text-gray-600 text-xs font-bold">Course Fee: {classes.course_price}/-</p>
                 {isAdmin || isInstructor ? (
                   // Render a message or other content for isAdmin and isInstructor users
                   <p className="text-gray-600">You cannot select this class as an admin or instructor.</p>
@@ -110,17 +110,13 @@ const Classes = () => {
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-6 w-6"
-                      fill="none"
+                      fill="currentColor"
                       viewBox="0 0 24 24"
-                      stroke="currentColor"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                      />
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15a1 1 0 01-1-1v-3a1 1 0 112 0v3a1 1 0 01-1 1zm0-8a1 1 0 01-1 1 1 1 0 010-2 1 1 0 011 1z" />
                     </svg>
+
+
                     Seat Full
                   </button>
                 ) : (
@@ -128,7 +124,7 @@ const Classes = () => {
                     {/* Add your custom logic here for user selection */}
                     {(
                       <button
-                        className="btn btn btn-active btn-neutral my-2"
+                        className="btn btn btn-active btn-success my-2"
                         onClick={() => handleSelect(user, classes)}
                       >
                         <svg
