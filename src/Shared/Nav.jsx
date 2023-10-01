@@ -28,7 +28,7 @@ const Nav = () => {
 
 
   return (
-    <div className={`navbar font-sans bg-indigo-800 bg-opacity-80 backdrop-filter text-white backdrop-blur-sm fixed top-0 left-0 right-0 z-10 ${darkMode ? 'dark' : ''}`}>
+    <div className={`navbar font-sans bg-emerald-600 bg-opacity-80 backdrop-filter text-white backdrop-blur-lg fixed top-0 left-0 right-0 z-10 ${darkMode ? 'dark' : ''}`}>
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -61,13 +61,13 @@ const Nav = () => {
       <div className="navbar-center hidden lg:flex">
 
         <ul className="menu menu-horizontal">
-          <li><Link to="/" className="text-base hover:text-base text-sm">Home</Link></li>
-          <li><Link to="/allClasses" className="text-base hover:text-base text-sm">Classes</Link></li>
-          <li><Link to="/instructors" className="text-base hover:text-base text-sm">Instructors</Link></li>
+          <li><Link to="/" className="text-base hover:text-base hover:text-sm text-sm">Home</Link></li>
+          <li><Link to="/allClasses" className="text-base hover:text-base hover:text-sm text-sm">Classes</Link></li>
+          <li><Link to="/instructors" className="text-base hover:text-base hover:text-sm text-sm">Instructors</Link></li>
           {user && <li>
-            {isAdmin ? <Link to="/dashboard/manageClasses" className="text-base hover:text-base text-sm">Admin Dashboard</Link> :
-              isInstructor ? <Link to="/dashboard/myClasses" className="text-base hover:text-base text-sm">Instructor Dashboard</Link> :
-                <Link to="/dashboard/selectedClasses" className="text-base hover:text-base text-sm">Student Dashboard</Link>}</li>}
+            {isAdmin ? <Link to="/dashboard/manageClasses" className="text-base hover:text-base  hover:text-sm text-sm">Admin Dashboard</Link> :
+              isInstructor ? <Link to="/dashboard/myClasses" className="text-base hover:text-base hover:text-sm text-sm">Instructor Dashboard</Link> :
+                <Link to="/dashboard/selectedClasses" className="text-base hover:text-base hover:text-sm text-sm">Student Dashboard</Link>}</li>}
 
           {/* Add the toggle button for dark mode */}
           <li

@@ -10,7 +10,7 @@ const Gallery = () => {
         <div className="my-10 p-3 bg-gray-200 bg-opacity-10" data-aos="fade-down">
             <div>
 
-                <h1 className="text-2xl text-sky-500 mb-8 text-yellow-500 relative border-l-4 border-indigo-500 pl-2">
+                <h1 className="text-2xl mb-8 text-emerald-500 relative border-l-4 border-yellow-500 pl-2">
                     Image Gallery
                 </h1>
 

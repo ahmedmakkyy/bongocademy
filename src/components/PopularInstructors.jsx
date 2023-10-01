@@ -14,13 +14,13 @@ const PopularInstructors = () => {
   return (
     <div className="my-20 p-3 bg-gray-200 bg-opacity-10" data-aos="fade-up">
       <div>
-        <h1 className="text-2xl mb-8 text-yellow-500 relative border-l-4 border-indigo-500 pl-2">
+        <h1 className="text-2xl mb-8 text-emerald-500 relative border-l-4 border-yellow-500 pl-2">
           Popular Instructors
         </h1>
         <div className="grid grid-cols-3 gap-5 p-1">
           {instructors.map((instructor, index) => (
             <div key={instructor.instructor_name} className="text-white relative">
-              <div className="absolute top-0 left-0 right-0  text-3xl text-indigo-400 text-center z-10 border-b-4 border-gray-200 pl-2">
+              <div className="absolute top-0 left-0 right-0  text-3xl text-gray-400 text-center z-10 border-b-4 border-emerald-100 pl-2">
                 #{index + 1}
               </div>
               <div className="p-2 my-10 flex items-center">
@@ -33,7 +33,7 @@ const PopularInstructors = () => {
                 </div>
                 <div className="flex-grow">
                   <div className="card-body text-left">
-                    <h2 className="font-bold text-md text-yellow-600">{instructor.instructor_name}</h2>
+                    <h2 className="font-bold text-md text-emerald-500">{instructor.instructor_name}</h2>
                     <p className="font-semibold text-sm text-gray-500">Students: {instructor.totalStudents}</p>
                   </div>
                 </div>
