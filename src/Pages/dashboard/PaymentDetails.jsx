@@ -28,39 +28,40 @@ const PaymentDetails = () => {
   }, [axiosSecure, user]);
 
   return (
-    <div className="w-full m-5 p-2">
+    <div className='m-5'>
       <div>
-        <h1 className="text-3xl font-light text-center mb-8 text-yellow-200 font-serif relative">
-          Payment Details
-          <span className="block w-1/3 h-0.5 bg-yellow-200 mx-auto mt-2"></span>
-          <span className="block w-1/3 h-0.5 bg-yellow-200 mx-auto mt-2"></span>
+        <h1 className="text-2xl font-bold mb-8 text-yellow-500 relative border-l-4 pl-2 border-emerald-500">
+          Payment History
         </h1>
       </div>
       <div className="overflow-x-auto">
         <table className="table w-full p-2 text-sm">
           <thead>
-            <tr className="bg-blue-200 text-gray-800">
-              <th className="py-2 px-4">Index</th>
-              <th className="py-2 px-4">Payment Amount</th>
-              <th className="py-2 px-4">Date</th>
-              <th className="py-2 px-4">Transaction ID</th>
-              <th className="py-2 px-4">Enrolled Courses</th>
+            <tr className="bg-emerald-500 text-gray-800">
+              {/* <th className="py-2 px-1">Index</th> */}
+              <th className="py-2 px-1">Amount</th>
+              <th className="py-2 px-1">Date</th>
+              <th className="py-2 px-1">Transaction ID</th>
+              {/* <th className="py-2 px-2">Enrolled Courses</th> */}
             </tr>
           </thead>
           <tbody className='bg-gray-800 bg-opacity-80 backdrop-blur-md'>
-            {payments.map((payment, index) => (
+            {payments.map((payment) => (
               <tr key={payment.transactionID}>
-                <td className="py-2 px-4 text-gray-100">{index + 1}</td>
-                <td className="py-2 px-4 text-gray-100">{payment.price}</td>
-                <td className="py-2 px-4 text-gray-100">{payment.date}</td>
-                <td className="py-2 px-4 text-gray-100">{payment.transactionID}</td>
-                <td className="py-2 px-4">
+                {/* <td className="py-2 px-1 text-gray-100">{index + 1}</td> */}
+                <td className="py-2 px-1 text-gray-100">{payment.price}</td>
+                <td className="py-2 px-1 text-gray-100">
+                  {new Date(payment.date).toLocaleDateString()}
+                </td>
+
+                <td className="py-2 px-1 text-gray-100">{payment.transactionID}</td>
+                {/* <td className="py-2 px-2">
                   <ul className="list-disc list-inside">
                     {payment.classes.map((classesObj, index) => (
                       <p key={index} className="text-gray-100">{index+1}. {classesObj.sport_name}</p>
                     ))}
                   </ul>
-                </td>
+                </td> */}
               </tr>
             ))}
           </tbody>

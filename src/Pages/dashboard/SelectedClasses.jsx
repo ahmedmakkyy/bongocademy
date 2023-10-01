@@ -19,7 +19,16 @@ const SelectedClasses = () => {
           const response = await axiosSecure.get(url);
           if (response.status === 200) {
             const data = response.data;
-            setSelectedClasses(data);
+
+            // Filter out duplicate classes by select_id
+            const uniqueClasses = [];
+            data.forEach((classItem) => {
+              if (!uniqueClasses.some((item) => item.select_id === classItem.select_id)) {
+                uniqueClasses.push(classItem);
+              }
+            });
+
+            setSelectedClasses(uniqueClasses);
           } else {
             console.log('Error:', response.status);
           }
@@ -28,6 +37,7 @@ const SelectedClasses = () => {
         }
       }
     };
+
 
     fetchSelectedClasses();
   }, [axiosSecure, user]);
@@ -46,9 +56,9 @@ const SelectedClasses = () => {
 
   const handleDelete = (selectId) => {
 
-    
 
-  
+
+
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -65,75 +75,76 @@ const SelectedClasses = () => {
           .then(response => response.json())
           .then(data => {
             console.log(data);
-            if (data.deletedCount > 0){
+            if (data.deletedCount > 0) {
               Swal.fire(
                 'Deleted!',
                 'Your file has been deleted.',
                 'success'
               )
-              
+
             }
             setSelectedClasses(prevState => prevState.filter(item => item.select_id !== selectId));
-           
-            
+
+
           })
           .catch(error => {
             console.error('Error:', error);
-           
+
           });
-        
-    
+
+
       }
     })
-  
+
   };
 
   return (
-    <div>
+    <div className='m-5 h-96'>
       <div>
-        <h1 className="text-2xl font-light text-center mb-4 text-yellow-500 font-serif relative">
+        <h1 className="text-2xl font-bold mb-8 text-yellow-500 relative border-l-4 pl-2 border-emerald-500">
           Selected Classes
-          <span className="block w-1/3 h-0.5 bg-yellow-500 mx-auto mt-2"></span>
-          <span className="block w-1/3 h-0.5 bg-yellow-500 mx-auto mt-2"></span>
         </h1>
       </div>
-      <div className="p-4 flex justify-end">
-        <h3 className="text-lg font-bold">Total Price: {totalPrice}</h3>
+      <div className="my-20 flex items-center justify-center">
+        <div><h3 className="text-xl text-emerald-500 font-semibold">Total Price: {totalPrice}</h3></div>
+        <div>
         <Link to={`/dashboard/payment?price=${totalPrice}`} className="ml-4">
-          <button className="btn btn-primary">Pay</button>
+          <button className="p-2 bg-sky-500">Pay Now</button>
         </Link>
+        </div>
       </div>
-      <table className="w-full">
-        <thead>
-          <tr className="border-b bg-gray-200">
-            <th className="p-4">#</th>
-            <th className="p-4">Sport Name</th>
-            <th className="p-4">Instructor</th>
-            <th className="p-4">Enrolled Students</th>
-            <th className="p-4">Course Fee</th>
-            <th className="p-4">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {selectedClasses.map((classes, index) => (
-            <tr key={classes._id} className="border-b">
-              <td className="p-4">{index + 1}</td>
-              <td className="p-4">{classes.sport_name}</td>
-              <td className="p-4">{classes.instructor_name}</td>
-              <td className="p-4">{classes.enrolled}</td>
-              <td className="p-4">{classes.course_price}</td>
-              <td className="p-4">
-                <button
-                  className="btn btn-danger"
-                  onClick={() => handleDelete(classes.select_id)}
-                >
-                  Delete
-                </button>
-              </td>
+      <div className='overflow-x-auto text-center'>
+        <table className="w-full font-semibold text-sm text-emerald-500 bg-indigo-900 bg-opacity-20 backdrop-blur-lg">
+          <thead>
+            <tr className="border-b bg-emerald-500 text-black">
+              <th className="p-2">#</th>
+              <th className="p-2">Sport Name</th>
+              <th className="p-2">Instructor</th>
+              <th className="p-2">Course Fee</th>
+              <th className="p-2">Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {selectedClasses.map((classes, index) => (
+              <tr key={classes._id} className="border-b">
+                <td className="p-2">{index + 1}</td>
+                <td className="p-2">{classes.sport_name}</td>
+                <td className="p-2">{classes.instructor_name}</td>
+                <td className="p-2">{classes.course_price}</td>
+                <td className="p-2">
+                  <button
+                    className="p-2 bg-red-500 hover:bg-red-600"
+                    onClick={() => handleDelete(classes.select_id)}
+                  >
+                    Remove
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+      </div>
     </div>
   );
 };

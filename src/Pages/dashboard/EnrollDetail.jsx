@@ -27,12 +27,10 @@ const EnrollDetail = () => {
   }, [axiosSecure, user]);
 
   return (
-    <div className="w-full">
+    <div className='m-5'>
       <div>
-        <h1 className="text-3xl font-light text-center mb-8 text-yellow-200 font-serif relative">
+        <h1 className="text-2xl font-bold mb-8 text-yellow-500 relative border-l-4 pl-2 border-emerald-500">
           Enrolled Classes
-          <span className="block w-1/3 h-0.5 bg-yellow-200 mx-auto mt-2"></span>
-          <span className="block w-1/3 h-0.5 bg-yellow-200 mx-auto mt-2"></span>
         </h1>
       </div>
       {payments.map((payment) => (
@@ -45,7 +43,6 @@ const EnrollDetail = () => {
                 </figure>
                 <div className="card-body">
                   <h2 className="card-title">{classesObj.sport_name}</h2>
-                  <p>You are welcome to this class. Just one step</p>
                   <p>Amount Paid: {classesObj.course_price}</p>
                   <div className="card-actions justify-end">
                     {/* Additional actions */}

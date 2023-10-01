@@ -2,33 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-.quote-overlay {
+
+/* .quote-overlay {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
+    padding: 100px;
+  } */
+
+  .layout{
+    font-family: 'Nunito Sans', sans-serif;
   }
   
-  .quote {
-    color: yellow;
-    text-align: center;
+  .layout h1{
+    font-family: 'Oswald', sans-serif;
   }
   
+ .drawer{
+  font-family: 'Nunito Sans', sans-serif;
+ }
 
 .drawer-side a.active{
     color: yellow;
-    
+    font-family: 'Oswald', sans-serif;
 
 }
 .drawer-side a{
     color: white;
     background-color: transparent;
+    font-family: 'Oswald', sans-serif;
 }
 
 .dark {
-    background-image: linear-gradient(to bottom, rgb(15, 15, 15), rgb(0, 0, 0));
-    color: white;
+    background-color:rgb(50, 50, 50);
+  }
+
+  table {
+    font-family: 'Nunito Sans', sans-serif;
   }
   

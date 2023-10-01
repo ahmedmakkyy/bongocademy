@@ -51,7 +51,7 @@ const router = createBrowserRouter([
       {
         path: "classDetail/:id",
         element: <PrivateRoute><ClassDetail></ClassDetail></PrivateRoute> ,
-        loader: ({ params }) => fetch(`https://bongo-sports-server.vercel.app/allClasses/${params.id}`)
+        loader: ({ params }) => fetch(`https://bongo-sports-server.vercel.app/allApprovedClasses/${params.id}`)
 
       }
     ]

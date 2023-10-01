@@ -44,14 +44,14 @@ const AddClass = () => {
                 setAvailable_seats('');
                 setCourse_price('');
 
-                if(data.insertedId){
+                if (data.insertedId) {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
                         title: 'Your class has been submitted. Wait for approval.',
                         showConfirmButton: false,
                         timer: 1500
-                      })
+                    })
                 }
             })
             .catch(error => {
@@ -62,11 +62,16 @@ const AddClass = () => {
 
 
     return (
-        <div className="w-full m-10 p-10">
-            
+        <div className='m-5'>
+            <div>
+                <h1 className="text-2xl font-bold mb-8 text-yellow-500 relative border-l-4 pl-2 border-emerald-500">
+                    Add Class
+                </h1>
+            </div>
+
             <div className="p-4 bg-gray-800 bg-opacity-80 backdrop-blur-md rounded-lg">
                 <form onSubmit={handleSubmit}>
-                <h1 className='text-2xl font-bold text-gray-300'>Add a new class</h1>
+                    <h1 className='text-2xl font-bold text-gray-300'>Add a new class</h1>
                     <div className="my-4">
                         <label className="block text-gray-100 text-sm font-bold mb-2" htmlFor="class-name">Class Name:</label>
                         <input

@@ -4,47 +4,45 @@ import 'aos/dist/aos.css'
 const Slider = () => {
   useEffect(() => {
     Aos.init();
-}, [])
+  }, [])
   const quotes = [
+    "Don't watch the clock; do what it does. Keep going.",
     "Sports is the ultimate teacher.",
     "Success is where preparation and opportunity meet.",
     "The difference between the impossible and the possible lies in determination.",
-    "Don't watch the clock; do what it does. Keep going."
   ];
 
   return (
-    <div className="mt-20" data-aos="zoom-in">
-      <div className="carousel w-full" style={{ height: '600px' }}>
-        <div id="item1" className="carousel-item w-full relative">
-          <img src="./slide-1.jpg" className="w-full" alt="Slide 1" />
-          <div className="quote-overlay">
-            <div className="quote">{quotes[0]}</div>
+    <div className="" data-aos="zoom-in">
+      <div className="carousel w-full h-112 mt-20">
+        <div id="slide1" className="carousel-item relative w-full">
+          <img src="./slide-1.jpg" className="w-full" />
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide4" className="btn btn-circle">❮</a>
+            <a href="#slide2" className="btn btn-circle">❯</a>
           </div>
         </div>
-        <div id="item2" className="carousel-item w-full relative">
-          <img src="./slide-2.jpg" className="w-full" alt="Slide 2" />
-          <div className="quote-overlay">
-            <div className="quote">{quotes[1]}</div>
+        <div id="slide2" className="carousel-item relative w-full">
+          <img src="./slide-2.jpg" className="w-full" />
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide1" className="btn btn-circle">❮</a>
+            <a href="#slide3" className="btn btn-circle">❯</a>
           </div>
         </div>
-        <div id="item3" className="carousel-item w-full relative">
-          <img src="./slide-3.jpg" className="w-full" alt="Slide 3" />
-          <div className="quote-overlay">
-            <div className="quote">{quotes[2]}</div>
+        <div id="slide3" className="carousel-item relative w-full">
+          <img src="./slide-3.jpg" className="w-full" />
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide2" className="btn btn-circle">❮</a>
+            <a href="#slide4" className="btn btn-circle">❯</a>
           </div>
         </div>
-        <div id="item4" className="carousel-item w-full relative">
-          <img src="./slide-4.jpg" className="w-full" alt="Slide 4" />
-          <div className="quote-overlay">
-            <div className="quote">{quotes[3]}</div>
+        <div id="slide4" className="carousel-item relative w-full">
+          <img src="./slide-4.jpg" className="w-full" />
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide3" className="btn btn-circle">❮</a>
+            <a href="#slide1" className="btn btn-circle">❯</a>
           </div>
         </div>
-      </div>
-      <div className="flex justify-center w-full py-2 gap-2">
-        <a href="#item1" className="btn btn-xs">1</a>
-        <a href="#item2" className="btn btn-xs">2</a>
-        <a href="#item3" className="btn btn-xs">3</a>
-        <a href="#item4" className="btn btn-xs">4</a>
       </div>
     </div>
   );

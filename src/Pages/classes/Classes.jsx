@@ -63,7 +63,7 @@ const Classes = () => {
             icon: 'success',
             title: 'Class has been selected',
             showConfirmButton: false,
-            timer: 200,
+            timer: 2000,
           });
         }
       })

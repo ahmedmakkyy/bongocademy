@@ -7,13 +7,11 @@ const Gallery = () => {
     }, [])
 
     return (
-        <div className="container mx-auto px-5 py-2 lg:px-32 lg:pt-24" data-aos="fade-down">
+        <div className="my-10 p-3 bg-gray-200 bg-opacity-10" data-aos="fade-down">
             <div>
 
-                <h1 className="text-3xl font-light text-center mb-8 text-yellow-500 font-serif relative">
+                <h1 className="text-2xl text-sky-500 mb-8 text-yellow-500 relative border-l-4 border-indigo-500 pl-2">
                     Image Gallery
-                    <span className="block w-1/3 h-0.5 bg-yellow-500 mx-auto mt-2"></span>
-                    <span className="block w-1/3 h-0.5 bg-yellow-500 mx-auto mt-2"></span>
                 </h1>
 
             </div>

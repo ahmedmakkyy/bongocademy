@@ -8,41 +8,43 @@ import 'aos/dist/aos.css'
 const PopularInstructors = () => {
   useEffect(() => {
     Aos.init();
-}, [])
-    const [instructors] = usePopularInsturctors();
-    return (
-        <div className="mt-4" data-aos="fade-up">
-        <div>
-          <h1 className="text-3xl font-light text-center mb-8 text-yellow-500 font-serif relative">
-            Popular Instructors
-            <span className="block w-1/3 h-0.5 bg-yellow-500 mx-auto mt-2"></span>
-            <span className="block w-1/3 h-0.5 bg-yellow-500 mx-auto mt-2"></span>
-          </h1>
-          <div className="flex flex-wrap">
-            {instructors.map((instructor) => (
-              <div key={instructor.instructor_name} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 p-4">
-                <div className="relative">
+  }, [])
+  const [instructors] = usePopularInsturctors();
+  console.log(instructors);
+  return (
+    <div className="my-20 p-3 bg-gray-200 bg-opacity-10" data-aos="fade-up">
+      <div>
+        <h1 className="text-2xl mb-8 text-yellow-500 relative border-l-4 border-indigo-500 pl-2">
+          Popular Instructors
+        </h1>
+        <div className="grid grid-cols-3 gap-5 p-1">
+          {instructors.map((instructor, index) => (
+            <div key={instructor.instructor_name} className="text-white relative">
+              <div className="absolute top-0 left-0 right-0  text-3xl text-indigo-400 text-center z-10 border-b-4 border-gray-200 pl-2">
+                #{index + 1}
+              </div>
+              <div className="p-2 my-10 flex items-center">
+                <div className="w-24 h-24 rounded-full overflow-hidden mr-3">
                   <img
                     src={instructor.instructor_photo}
-                    alt={instructor.name}
-                    className="w-full h-60 object-cover rounded-t-lg"
+                    alt={`Instructor ${instructor.instructor_name}`}
+                    className="object-cover w-full h-full"
                   />
-                  <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gray-900 bg-opacity-50 backdrop-filter backdrop-blur-sm"></div>
-                  <div className="absolute bottom-0 left-0 px-4 w-full h-1/3 flex flex-col justify-end text-white">
-                    <p className="text-gray-200 mb-2">
-                      <span className="font-semibold">Instructor:</span> {instructor.instructor_name}
-                    </p>
-                    <p className="text-gray-200 mb-4">
-                      <span className="font-semibold">Students:</span> {instructor.totalStudents}
-                    </p>
+                </div>
+                <div className="flex-grow">
+                  <div className="card-body text-left">
+                    <h2 className="font-bold text-md text-yellow-600">{instructor.instructor_name}</h2>
+                    <p className="font-semibold text-sm text-gray-500">Students: {instructor.totalStudents}</p>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
+
       </div>
-    );
+    </div>
+  );
 };
 
 export default PopularInstructors;

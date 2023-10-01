@@ -21,14 +21,14 @@ const DashBoard = () => {
     <div className="drawer lg:drawer-open">
      
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="bg-gradient-to-r from-indigo-500 via-purple-400 to-pink-400 drawer-content flex flex-col items-center justify-center">
+      <div className="drawer-content flex flex-col">
         <Outlet></Outlet>
-        <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+        <label htmlFor="my-drawer-2" className="btn btn-success drawer-button btn-md lg:hidden">Menu</label>
         
       </div>
       <div className="drawer-side">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-        <ul className="menu gap-4 p-4 w-80 h-full bg-gradient-to-r from-gray-700 to-gray-600 text-base-content">
+        <ul className="menu gap-4 p-4 w-80 h-full bg-emerald-700">
           {/* Sidebar content here */}
           <img src={logo} alt="" />
           <div className="divider"></div> 

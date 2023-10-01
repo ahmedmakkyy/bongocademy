@@ -9,14 +9,14 @@ import Gallery from "../../components/Gallery";
 const Homepage = () => {
     return (
         <div className="">
-            
-
             <Slider></Slider>
-         <PopularCard></PopularCard>
-         <PopularInstructors></PopularInstructors>
-         <Gallery></Gallery>
+            <div className="container mx-auto">
+                <PopularCard></PopularCard>
+                <PopularInstructors></PopularInstructors>
+                <Gallery></Gallery>
+            </div>
         </div>
-        
+
     );
 };
 

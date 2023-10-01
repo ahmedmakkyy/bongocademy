@@ -6,10 +6,7 @@ export default {
   ],
   theme: {
     extend: {},
-    fontFamily: {
-      sans: ['Inter', 'Arial', 'sans-serif'],
-      serif: ['Georgia', 'serif'],
-    },
+ 
   },
   plugins: [require("daisyui")],
 }
