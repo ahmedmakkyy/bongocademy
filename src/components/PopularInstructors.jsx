@@ -17,7 +17,7 @@ const PopularInstructors = () => {
         <h1 className="text-2xl mb-8 text-emerald-500 relative border-l-4 border-yellow-500 pl-2">
           Popular Instructors
         </h1>
-        <div className="grid grid-cols-3 gap-5 p-1">
+        <div className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5 p-1">
           {instructors.map((instructor, index) => (
             <div key={instructor.instructor_name} className="text-white relative">
               <div className="absolute top-0 left-0 right-0  text-3xl text-gray-400 text-center z-10 border-b-4 border-emerald-100 pl-2">

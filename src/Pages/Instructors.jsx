@@ -14,11 +14,11 @@ const Instructors = () => {
                     </h1>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-2 sm:grid-cols-1 gap-5 mx-20">
+                <div className="grid md:grid-cols-2 lg:grid-cols-2 sm:grid-cols-1 gap-5 mx-5 pb-10">
                     {allinstructors.map((instructor) => (
-                       <div key={instructor.instructor_email} className="text-white relative">
+                       <div key={instructor.instructor_email} className="relative">
                 
-                       <div className="p-2 my-2 flex items-center shadow-lg bg-emerald-900 rounded-3xl">
+                       <div className="p-2 my-2 flex items-center shadow-lg bg-white shadow-gray-300 rounded-3xl">
                          <div className="w-24 h-24 rounded-full overflow-hidden mr-3">
                            <img
                              src={instructor.instructor_photo}
@@ -28,9 +28,9 @@ const Instructors = () => {
                          </div>
                          <div className="flex-grow">
                            <div className="card-body text-left">
-                             <h2 className="font-bold text-md text-emerald-200">{instructor.instructor_name}</h2>
+                             <h2 className="font-bold text-md text-emerald-600">{instructor.instructor_name}</h2>
                               
-                             <p className="font-semibold text-sm text-gray-200">E-mail: {instructor.instructor_email}</p>
+                             <p className="font-semibold text-sm text-gray-500">E-mail: {instructor.instructor_email}</p>
                            </div>
                          </div>
                        </div>
